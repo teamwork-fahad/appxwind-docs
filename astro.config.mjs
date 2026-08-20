@@ -15,6 +15,18 @@ export default defineConfig({
 
 			sidebar: [
 				{
+					label: 'CSS',
+					items: [{ slug: 'css/introduction' }],
+				},
+				{
+					label: 'HTML',
+					items: [{ slug: 'html/introduction' }],
+				},
+				{
+					label: 'JavaScript',
+					items: [{ slug: 'javascript/introduction' }],
+				},
+				{
 					label: 'Mathematics',
 					items: [
 						{
@@ -47,11 +59,21 @@ export default defineConfig({
 					],
 				},
 				{
-					label: 'SQLite',
+					label: 'Object-Oriented Programming',
 					items: [
-						{ slug: 'sql' },
-						{ slug: 'sql/unit-1', label: 'Introduction to SQLite' },
-						{ slug: 'sql/unit-2', label: 'Backup and CSV Handling' },
+						{ slug: 'oop' },
+						{
+							label: 'C++ Examples and Syllabus',
+							items: [
+								{ slug: 'oop/cpp' },
+								{ slug: 'oop/cpp/fundamentals' },
+								{ slug: 'oop/cpp/encapsulation-inheritance' },
+								{ slug: 'oop/cpp/polymorphism' },
+							],
+						},
+						{ slug: 'oop/java', label: 'Java Examples' },
+						{ slug: 'oop/python', label: 'Python Examples' },
+						{ slug: 'oop/php', label: 'PHP Examples' },
 					],
 				},
 				{
@@ -64,12 +86,12 @@ export default defineConfig({
 					],
 				},
 				{
-					label: 'HTML',
-					items: [{ slug: 'html/introduction' }],
-				},
-				{
-					label: 'CSS',
-					items: [{ slug: 'css/introduction' }],
+					label: 'SQLite',
+					items: [
+						{ slug: 'sql' },
+						{ slug: 'sql/unit-1', label: 'Introduction to SQLite' },
+						{ slug: 'sql/unit-2', label: 'Backup and CSV Handling' },
+					],
 				},
 			],
 		}),
