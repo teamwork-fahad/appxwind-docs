@@ -19,6 +19,17 @@ export default defineConfig({
 					items: [{ slug: 'css/introduction' }],
 				},
 				{
+					label: 'Data Structures and Algorithms',
+					items: [
+						{ slug: 'dsa' },
+						{ slug: 'dsa/introduction', label: 'Introduction and Analysis' },
+						{ slug: 'dsa/linear', label: 'Linear Data Structures' },
+						{ slug: 'dsa/non-linear', label: 'Non-Linear Data Structures' },
+						{ slug: 'dsa/searching', label: 'Searching Techniques' },
+						{ slug: 'dsa/sorting', label: 'Sorting Techniques' },
+					],
+				},
+				{
 					label: 'HTML',
 					items: [{ slug: 'html/introduction' }],
 				},
