@@ -1,24 +1,50 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import rehypeKatex from 'rehype-katex';
+import remarkMath from 'remark-math';
 
-// https://astro.build/config
 export default defineConfig({
+	markdown: {
+		remarkPlugins: [remarkMath],
+		rehypePlugins: [rehypeKatex],
+	},
 	integrations: [
 		starlight({
-			title: 'My Docs',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+			title: 'AppXwinD Docs',
+			customCss: ['katex/dist/katex.min.css'],
+
 			sidebar: [
 				{
-					label: 'Guides',
+					label: 'Mathematics',
 					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
+						{
+							label: 'Unit 1 — Relations, Functions, Sequence and Series',
+							link: '/maths/unit-1/',
+						},
+						{
+							label: 'Unit 2 — Theory of Matrices',
+							link: '/maths/unit-2/',
+						},
+						{
+							label: 'Unit 3 — Basic Statistics',
+							items: [
+								{ slug: 'maths/unit-3' },
+								{ slug: 'maths/unit-3/frequency-distribution' },
+								{ slug: 'maths/unit-3/central-tendency' },
+								{ slug: 'maths/unit-3/mean' },
+								{ slug: 'maths/unit-3/quartiles-deciles-percentiles' },
+								{ slug: 'maths/unit-3/dispersion' },
+							],
+						},
+						{
+							label: 'Unit 4 — Probability Theory',
+							link: '/maths/unit-4/',
+						},
+						{
+							label: 'Unit 5 — Random Variables and Distributions',
+							link: '/maths/unit-5/',
+						},
 					],
-				},
-				{
-					label: 'Reference',
-					items: [{ autogenerate: { directory: 'reference' } }],
 				},
 			],
 		}),
