@@ -50,6 +50,18 @@ export default defineConfig({
 					label: 'SQL Practice',
 					items: [{ slug: 'sql' }],
 				},
+				{
+					label: 'Python',
+					items: [{ slug: 'python/introduction' }],
+				},
+				{
+					label: 'HTML',
+					items: [{ slug: 'html/introduction' }],
+				},
+				{
+					label: 'CSS',
+					items: [{ slug: 'css/introduction' }],
+				},
 			],
 		}),
 	],
