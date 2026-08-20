@@ -1,15 +1,25 @@
 ---
-title: 'SQL Practice Dataset'
-description: 'Ready-to-run dummy tables and SQL exercises for beginners.'
+title: 'SQLite and Python Practice'
+description: 'SQLite datasets, Python examples, and data analysis exercises for beginners.'
 ---
 
-# SQL Practice Dataset
+# SQLite and Python Practice
 
 This page contains 12 connected and standalone datasets. Run the setup scripts in order, then solve the exercises using `SELECT`, filtering, sorting, grouping, joins, subqueries, and window functions.
 
 :::tip
 The SQL uses common MySQL/PostgreSQL-compatible syntax. Run each block separately if your database does not support multiple statements at once.
 :::
+
+## Course Syllabus
+
+This course moves from SQLite fundamentals to Python database programming, file handling, Pandas/NumPy data frames, and two-dimensional data visualization.
+
+- [Introduction to SQLite](./unit-1/)
+- [Database Backup and CSV Handling](./unit-2/)
+- [Python Interaction with SQLite](./unit-3/)
+- [Python Interaction with Text and CSV](./unit-4/)
+- [Data Visualization Using DataFrames](./unit-5/)
 
 ## 1. Departments
 

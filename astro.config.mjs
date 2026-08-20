@@ -47,12 +47,21 @@ export default defineConfig({
 					],
 				},
 				{
-					label: 'SQL Practice',
-					items: [{ slug: 'sql' }],
+					label: 'SQLite',
+					items: [
+						{ slug: 'sql' },
+						{ slug: 'sql/unit-1', label: 'Introduction to SQLite' },
+						{ slug: 'sql/unit-2', label: 'Backup and CSV Handling' },
+					],
 				},
 				{
 					label: 'Python',
-					items: [{ slug: 'python/introduction' }],
+					items: [
+						{ slug: 'python/introduction' },
+						{ slug: 'sql/unit-3', label: 'Python with SQLite' },
+						{ slug: 'sql/unit-4', label: 'Text and CSV Files' },
+						{ slug: 'sql/unit-5', label: 'Data Visualization' },
+					],
 				},
 				{
 					label: 'HTML',
