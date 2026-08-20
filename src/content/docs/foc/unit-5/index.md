@@ -1,3 +1,8 @@
+---
+title: 'OpenOffice Suite'
+description: 'Word processing, spreadsheets, presentations, and OpenOffice productivity tools.'
+---
+
 # Unit 5: Open Office Suite
 
 ## Overview

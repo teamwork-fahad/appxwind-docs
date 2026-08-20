@@ -16,10 +16,12 @@ export default defineConfig({
 			sidebar: [
 				{
 					label: 'CSS',
+					collapsed: true,
 					items: [{ slug: 'css/introduction' }],
 				},
 				{
 					label: 'Data Structures and Algorithms',
+					collapsed: true,
 					items: [
 						{ slug: 'dsa' },
 						{ slug: 'dsa/introduction', label: 'Introduction and Analysis' },
@@ -31,14 +33,17 @@ export default defineConfig({
 				},
 				{
 					label: 'HTML',
+					collapsed: true,
 					items: [{ slug: 'html/introduction' }],
 				},
 				{
 					label: 'JavaScript',
+					collapsed: true,
 					items: [{ slug: 'javascript/introduction' }],
 				},
 				{
 					label: 'Mathematics',
+					collapsed: true,
 					items: [
 						{
 							label: 'Unit 1 — Relations, Functions, Sequence and Series',
@@ -50,6 +55,7 @@ export default defineConfig({
 						},
 						{
 							label: 'Unit 3 — Basic Statistics',
+							collapsed: true,
 							items: [
 								{ slug: 'maths/unit-3' },
 								{ slug: 'maths/unit-3/frequency-distribution' },
@@ -71,10 +77,12 @@ export default defineConfig({
 				},
 				{
 					label: 'Object-Oriented Programming',
+					collapsed: true,
 					items: [
 						{ slug: 'oop' },
 						{
 							label: 'C++ Examples and Syllabus',
+							collapsed: true,
 							items: [
 								{ slug: 'oop/cpp' },
 								{ slug: 'oop/cpp/fundamentals' },
@@ -89,6 +97,7 @@ export default defineConfig({
 				},
 				{
 					label: 'Python',
+					collapsed: true,
 					items: [
 						{ slug: 'python/introduction' },
 						{ slug: 'sql/unit-3', label: 'Python with SQLite' },
@@ -98,6 +107,7 @@ export default defineConfig({
 				},
 				{
 					label: 'SQLite',
+					collapsed: true,
 					items: [
 						{ slug: 'sql' },
 						{ slug: 'sql/unit-1', label: 'Introduction to SQLite' },

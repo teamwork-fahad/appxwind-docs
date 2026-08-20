@@ -1,3 +1,8 @@
+---
+title: 'Number Systems and Digital Logic'
+description: 'Number systems, conversions, binary arithmetic, and digital logic fundamentals.'
+---
+
 # Unit 2: Number Systems and Digital Logic
 
 ## Number Systems

@@ -1,3 +1,8 @@
+---
+title: 'Introduction to Computers and Components'
+description: 'Computer basics, components, generations, and classifications.'
+---
+
 # Unit 1: Introduction to Computers and its Components
 
 ## 1.1 Computer

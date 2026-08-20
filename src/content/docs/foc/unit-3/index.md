@@ -1,3 +1,8 @@
+---
+title: 'Software and Programming Concepts'
+description: 'Software types, programming fundamentals, and system design concepts.'
+---
+
 # Unit 3: Software and Programming Concepts
 
 ## Overview

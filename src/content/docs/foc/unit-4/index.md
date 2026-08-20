@@ -1,3 +1,8 @@
+---
+title: 'Introduction to Linux'
+description: 'Linux fundamentals, open-source concepts, commands, and operating system basics.'
+---
+
 # Unit 4: Introduction to Open Source OS: Linux
 
 ## Overview
