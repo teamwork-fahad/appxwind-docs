@@ -372,3 +372,260 @@ $$\boxed{\text{Result} < 10^n \Rightarrow \text{No Carry}}$$
 > **9's Complement → Add → +1 → Check Carry → Carry = Positive, No Carry = Negative**
 
 This is the complete procedure for **Decimal Complementary Subtraction**.
+
+---
+
+## Binary Subtraction Using 1's Complement
+
+Binary subtraction can be done using the **1's complement method**.
+
+This method is useful for subtracting binary numbers without doing normal borrowing.
+
+---
+
+### 1. What is 1's Complement?
+
+To find the **1's complement** of a binary number:
+
+- Change `0` to `1`
+- Change `1` to `0`
+
+#### Example
+
+```
+Original Number : 01010
+1's Complement  : 10101
+```
+
+So:
+
+$$01010_2 \rightarrow 10101_2$$
+
+---
+
+### 2. Steps for Binary Subtraction
+
+To subtract two binary numbers using 1's complement:
+
+1. Write the number from which you want to subtract.
+2. Find the **1's complement** of the number being subtracted.
+3. Add the 1's complement to the first number.
+4. Check for a **carry**.
+5. If a carry is generated:
+   - Remove the carry.
+   - Add the carry to the rightmost bit of the result.
+6. If there is no carry:
+   - Find the 1's complement of the result.
+   - Put a negative (`−`) sign before the result.
+
+---
+
+### 3. Example: Subtract 01010 from 10000
+
+The question is:
+
+$$10000_2 - 01010_2$$
+
+#### Step 1: Find 1's Complement
+
+The number being subtracted is:
+
+```
+01010
+```
+
+Change every `0` to `1` and every `1` to `0`:
+
+```
+01010
+  ↓
+10101
+```
+
+Therefore:
+
+$$1's\ Complement\ of\ 01010 = 10101$$
+
+---
+
+#### Step 2: Add the Complement
+
+Add `10101` to `10000`:
+
+```
+    10000
+  + 10101
+  -------
+   100101
+```
+
+The result has **6 bits**, but our original numbers have only **5 bits**.
+
+So the extra leftmost `1` is the **carry**.
+
+```
+100101
+↑
+Carry
+```
+
+Remaining result:
+
+```
+00101
+```
+
+---
+
+#### Step 3: Add the Carry Again
+
+In the 1's complement method, when a carry is generated, we use **end-around carry**.
+
+This means we add the carry `1` to the rightmost side of the result.
+
+```
+    00101
+  +     1
+  -------
+    00110
+```
+
+---
+
+### 4. Final Answer
+
+Therefore:
+
+$$\boxed{10000_2 - 01010_2 = 00110_2}$$
+
+So the answer is:
+
+```
+00110₂
+```
+
+---
+
+### 5. Check the Answer
+
+We can convert the numbers to decimal to check our answer.
+
+```
+10000₂ = 16₁₀
+01010₂ = 10₁₀
+```
+
+Therefore:
+
+$$16 - 10 = 6$$
+
+And:
+
+```
+00110₂ = 6₁₀
+```
+
+So the answer is correct. ✅
+
+---
+
+### 6. Important Rule: End-Around Carry
+
+Remember this rule:
+
+> **If a carry is generated, remove it and add it to the rightmost bit of the result.**
+
+This is called **End-Around Carry**.
+
+#### Example
+
+```
+100101
+↑
+Carry = 1
+```
+
+Remove the carry:
+
+```
+00101
+```
+
+Add the carry:
+
+```
+  00101
++     1
+-------
+  00110
+```
+
+---
+
+### 7. What If There Is No Carry?
+
+If there is **no carry** after addition:
+
+1. Take the **1's complement** of the result.
+2. Put a negative (`−`) sign before it.
+
+#### Example
+
+Suppose the addition gives:
+
+```
+00101
+```
+
+There is no carry.
+
+Find its 1's complement:
+
+```
+00101
+  ↓
+11010
+```
+
+Therefore, the answer would be:
+
+```
+−11010₂
+```
+
+---
+
+### 8. Quick Revision
+
+#### 1's Complement
+
+Change:
+
+```
+0 → 1
+1 → 0
+```
+
+#### Subtraction Method
+
+```
+1. Find 1's complement
+2. Add it to the first number
+3. Check carry
+4. Carry present → End-around carry
+5. No carry → 1's complement + negative sign
+```
+
+#### Most Important Point
+
+$$\boxed{\text{Carry} \rightarrow \text{Add carry again}}$$
+
+This is called:
+
+**End-Around Carry**
+
+---
+
+### 9. One-Line Shortcut
+
+> **1's Complement → Add → Check Carry → Carry = End-Around Carry → No Carry = Negative Answer**
