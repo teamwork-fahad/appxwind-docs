@@ -46,6 +46,10 @@ export default defineConfig({
 						},
 					],
 				},
+				{
+					label: 'SQL Practice',
+					items: [{ slug: 'sql' }],
+				},
 			],
 		}),
 	],
