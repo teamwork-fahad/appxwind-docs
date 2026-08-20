@@ -32,6 +32,18 @@ export default defineConfig({
 					],
 				},
 				{
+					label: 'Fundamentals of Computer',
+					collapsed: true,
+					items: [
+						{ slug: 'foc' },
+						{ slug: 'foc/unit-1', label: 'Introduction to Computers' },
+						{ slug: 'foc/unit-2', label: 'Number Systems and Digital Logic' },
+						{ slug: 'foc/unit-3', label: 'Software and Programming Concepts' },
+						{ slug: 'foc/unit-4', label: 'Introduction to Linux' },
+						{ slug: 'foc/unit-5', label: 'OpenOffice Suite' },
+					],
+				},
+				{
 					label: 'HTML',
 					collapsed: true,
 					items: [{ slug: 'html/introduction' }],
