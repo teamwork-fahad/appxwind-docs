@@ -1,14 +1,21 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import keystatic from '@keystatic/astro';
+import node from '@astrojs/node';
+import react from '@astrojs/react';
 import rehypeKatex from 'rehype-katex';
 import remarkMath from 'remark-math';
 
 export default defineConfig({
+	output: 'server',
+	adapter: node({ mode: 'standalone' }),
 	markdown: {
 		remarkPlugins: [remarkMath],
 		rehypePlugins: [rehypeKatex],
 	},
 	integrations: [
+		react(),
+		keystatic(),
 		starlight({
 			title: 'AppXwinD Docs',
 			customCss: ['katex/dist/katex.min.css'],
