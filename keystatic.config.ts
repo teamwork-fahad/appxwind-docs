@@ -9,14 +9,15 @@ export default config({
       name: 'AppXwinD Docs',
     },
     navigation: {
-      Content: ['tutorials', 'markdownTutorials'],
+      'All content (46 files)': ['tutorials', 'markdownTutorials'],
     },
   },
   collections: {
     tutorials: collection({
-      label: 'Tutorials',
+      label: 'MDX tutorials (6)',
       path: 'src/content/docs/**',
       slugField: 'title',
+      previewUrl: '/{slug}/',
       entryLayout: 'content',
       format: {
         contentField: 'content',
@@ -40,9 +41,10 @@ export default config({
       },
     }),
     markdownTutorials: collection({
-      label: 'Markdown tutorials',
+      label: 'Markdown tutorials (40)',
       path: 'src/content/docs/**',
       slugField: 'title',
+      previewUrl: '/{slug}/',
       entryLayout: 'content',
       format: {
         contentField: 'content',

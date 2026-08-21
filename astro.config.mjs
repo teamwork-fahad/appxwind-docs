@@ -129,10 +129,17 @@ export default defineConfig({
 					label: 'SQL',
 					collapsed: true,
 					items: [
-						{ slug: 'sql' },
-						{ slug: 'sql/unit-1', label: 'Introduction to SQL' },
-						{ slug: 'sql/unit-2', label: 'SQL Backup and CSV Handling' },
 						{ slug: 'sql/sql-queries-exercise-2', label: 'SQL Tasks - Exercise II' },
+					],
+				},
+				{
+					label: 'SQLite',
+					collapsed: true,
+					items: [
+						{ slug: 'sqlite', label: 'SQLite' },
+						{ slug: 'sqlite/unit-1', label: 'Introduction to SQLite' },
+						{ slug: 'sql/unit-2', label: 'Database Backup and CSV Handling' },
+						{ slug: 'sqlite-and-python-practice', label: 'SQLite and Python Practice' },
 					],
 				},
 			],

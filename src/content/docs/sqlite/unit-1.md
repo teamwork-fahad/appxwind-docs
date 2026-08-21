@@ -1,8 +1,7 @@
 ---
-title: 'Introduction to SQLite'
-description: 'SQLite data types, transactions, filtering, joins, and triggers.'
+title: Introduction to SQLite
+description: SQLite data types, transactions, filtering, joins, and triggers.
 ---
-
 ## 1.1 SQLite Fundamentals
 
 SQLite is a lightweight, serverless, self-contained relational database. A database can be stored in one `.db` file, making it useful for learning, small applications, and local data analysis.
@@ -11,13 +10,13 @@ SQLite is a lightweight, serverless, self-contained relational database. A datab
 
 SQLite uses dynamic typing. A value has a storage class, while a column has type affinity that influences how inserted values are stored.
 
-| Storage class | Use |
-| --- | --- |
-| `NULL` | Missing or unknown value |
-| `INTEGER` | Whole numbers |
-| `REAL` | Floating-point numbers |
-| `TEXT` | Strings |
-| `BLOB` | Raw binary data |
+| Storage class | Use                      |
+| ------------- | ------------------------ |
+| `NULL`        | Missing or unknown value |
+| `INTEGER`     | Whole numbers            |
+| `REAL`        | Floating-point numbers   |
+| `TEXT`        | Strings                  |
+| `BLOB`        | Raw binary data          |
 
 ```sql
 CREATE TABLE data_types (
