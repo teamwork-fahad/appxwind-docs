@@ -8,7 +8,7 @@ description: >-
 
 Welcome to the Fundamentals of Computer course. This section covers essential concepts and knowledge about computers, operating systems, and office applications.
 
-## Course Units
+## Course content
 
 * **Unit 1**: Introduction to Computers and its Components
 * **Unit 2**: Number Systems and Digital Logic
