@@ -112,18 +112,20 @@ export default defineConfig({
 					collapsed: true,
 					items: [
 						{ slug: 'python/introduction' },
+						{ slug: 'python/dhp-practical-tasks-2026', label: 'DHP Practical Tasks 2026' },
 						{ slug: 'sql/unit-3', label: 'Python with SQLite' },
 						{ slug: 'sql/unit-4', label: 'Text and CSV Files' },
 						{ slug: 'sql/unit-5', label: 'Data Visualization' },
 					],
 				},
 				{
-					label: 'SQLite',
+					label: 'SQL',
 					collapsed: true,
 					items: [
 						{ slug: 'sql' },
-						{ slug: 'sql/unit-1', label: 'Introduction to SQLite' },
-						{ slug: 'sql/unit-2', label: 'Backup and CSV Handling' },
+						{ slug: 'sql/unit-1', label: 'Introduction to SQL' },
+						{ slug: 'sql/unit-2', label: 'SQL Backup and CSV Handling' },
+						{ slug: 'sql/sql-queries-exercise-2', label: 'SQL Tasks - Exercise II' },
 					],
 				},
 			],

@@ -89,6 +89,94 @@ with sqlite3.connect('school.db') as connection:
     connection.commit()
 ```
 
+## 3.4 SQLite + Python Student Database Assignment
+
+This practical exercise creates a college database, inserts 10 student records, adds a `course` column, filters students from `Navsari` in `bca`, and exports the table to SQL and CSV files.
+
+```python
+import sqlite3
+import csv
+
+# Connect to database
+conn = sqlite3.connect('college.db')
+cur = conn.cursor()
+
+# Create table
+cur.execute('''
+CREATE TABLE IF NOT EXISTS Student (
+    roll_no INTEGER PRIMARY KEY,
+    name TEXT(20),
+    city TEXT(20),
+    age INTEGER
+)
+''')
+
+# Insert 10 student records
+students = [
+    (101, 'Jil', 'Surat', 24),
+    (102, 'Ayaan', 'Ahmedabad', 21),
+    (103, 'Zaid', 'Vadodara', 19),
+    (104, 'Akash', 'Rajkot', 22),
+    (105, 'Indrajeet', 'Bharuch', 20),
+    (106, 'Ali', 'Surat', 20),
+    (107, 'Riya', 'Navsari', 23),
+    (108, 'Mehul', 'Surat', 21),
+    (109, 'Nisha', 'Vadodara', 22),
+    (110, 'Aman', 'Rajkot', 20)
+]
+
+cur.executemany(
+    'INSERT INTO Student (roll_no, name, city, age) VALUES (?, ?, ?, ?)',
+    students
+)
+
+# Add column course
+cur.execute('ALTER TABLE Student ADD COLUMN course TEXT(20)')
+
+# Update the required student
+cur.execute(
+    'UPDATE Student SET city = ?, course = ? WHERE roll_no = ?',
+    ('Navsari', 'bca', 103)
+)
+
+# Display students from Navsari with course bca
+print('Students from Navsari with course bca:')
+rows = cur.execute(
+    'SELECT * FROM Student WHERE city = ? AND course = ?',
+    ('Navsari', 'bca')
+).fetchall()
+
+for row in rows:
+    print(row)
+
+# Export SQL dump
+with open('student_table.sql', 'w', encoding='utf-8') as file:
+    for line in conn.iterdump():
+        file.write(line + '\n')
+
+# Export CSV file
+with open('student.csv', 'w', newline='', encoding='utf-8') as csv_file:
+    writer = csv.writer(csv_file)
+    writer.writerow(['roll_no', 'name', 'city', 'age', 'course'])
+    writer.writerows(
+        cur.execute('SELECT roll_no, name, city, age, course FROM Student').fetchall()
+    )
+
+conn.commit()
+conn.close()
+
+print('SQL dump saved as student_table.sql')
+print('CSV export saved as student.csv')
+```
+
+Expected result for the query:
+
+```python
+(103, 'Zaid', 'Navsari', 19, 'bca')
+```
+
+This is the Python version of the assignment, using the built-in `sqlite3` module instead of writing only raw SQL commands.
+
 ### Practice
 
 1. Write a function that returns one student by ID.

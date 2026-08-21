@@ -99,6 +99,10 @@ WHERE e.status = 'Completed';
 .output stdout
 ```
 
+## 2.4 SQLite Shell Practice
+
+This section focuses on using SQLite shell commands for dumps and CSV export. For the full student database exercise in Python using `sqlite3`, see the SQLite + Python chapter.
+
 ### Practice
 
 1. Create a complete backup of the practice database.
