@@ -1,8 +1,7 @@
 ---
-title: Exercise-Mean, Median and Mode
+title: Exercise — Mean, Median and Mode
 description: covering mean, median and mode with step-by-step solutions.
 ---
-# Exercise&#x20;
 
 This exercise contains questions based on **Mean, Median and Mode**.
 
@@ -26,10 +25,10 @@ The following frequency distribution gives the monthly consumption of electricit
 | 165–185                        | 8                   |
 | 185–205                        | 4                   |
 
-\<details>
-\<summary>Show Solution\</summary>
+<details>
+<summary>Show Solution</summary>
 
-### Step 1: Find the Mean
+#### Step 1: Find the Mean
 
 Find the class marks:
 
@@ -47,18 +46,18 @@ Find the class marks:
 Formula:
 
 $$
-Mean = \frac\{\sum fx}\{\sum f}
+Mean = \frac{\sum fx}{\sum f}
 $$
 
 $$
-Mean = \frac\{9320}\{68}
+Mean = \frac{9320}{68}
 $$
 
 $$
-\boxed\{Mean \approx 137.06}
+\boxed{Mean \approx 137.06}
 $$
 
-### Step 2: Find the Median
+#### Step 2: Find the Median
 
 Total frequency:
 
@@ -67,7 +66,7 @@ N=68
 $$
 
 $$
-\frac\{N}\{2}=34
+\frac{N}{2}=34
 $$
 
 Cumulative frequency:
@@ -98,11 +97,11 @@ h = 20
 Formula:
 
 $$
-Median = L+\left(\frac\{N/2-C.F.}\{f}\right)\times h
+Median = L+\left(\frac{N/2-C.F.}{f}\right)\times h
 $$
 
 $$
-Median = 125+\left(\frac\{34-22}\{20}\right)\times20
+Median = 125+\left(\frac{34-22}{20}\right)\times20
 $$
 
 $$
@@ -110,10 +109,10 @@ Median=125+12
 $$
 
 $$
-\boxed\{Median=137}
+\boxed{Median=137}
 $$
 
-### Step 3: Find the Mode
+#### Step 3: Find the Mode
 
 The highest frequency is **20**, so the modal class is **125–145**.
 
@@ -130,42 +129,42 @@ h = 20
 Formula:
 
 $$
-Mode=L+\left(\frac\{f\_1-f\_0}\{2f\_1-f\_0-f\_2}\right)\times h
+Mode=L+\left(\frac{f_1-f_0}{2f_1-f_0-f_2}\right)\times h
 $$
 
 $$
-Mode=125+\left(\frac\{20-13}\{40-13-14}\right)\times20
+Mode=125+\left(\frac{20-13}{40-13-14}\right)\times20
 $$
 
 $$
-Mode=125+\frac\{7}\{13}\times20
+Mode=125+\frac{7}{13}\times20
 $$
 
 $$
-\boxed\{Mode\approx135.77}
+\boxed{Mode\approx135.77}
 $$
 
-### Comparison
+#### Comparison
 
 $$
-\boxed\{Mean\approx137.06}
-$$
-
-$$
-\boxed\{Median=137}
+\boxed{Mean\approx137.06}
 $$
 
 $$
-\boxed\{Mode\approx135.77}
+\boxed{Median=137}
+$$
+
+$$
+\boxed{Mode\approx135.77}
 $$
 
 Therefore:
 
 $$
-\boxed\{Mean>Median>Mode}
+\boxed{Mean>Median>Mode}
 $$
 
-\</details>
+</details>
 
 ---
 
@@ -183,10 +182,10 @@ If the median of the distribution given below is **28.5**, find the values of **
 | 50–60          | 5         |
 | **Total**      | **60**    |
 
-\<details>
-\<summary>Show Solution\</summary>
+<details>
+<summary>Show Solution</summary>
 
-### Step 1: Find x
+#### Step 1: Find x
 
 Given:
 
@@ -210,17 +209,17 @@ h = 10
 Using:
 
 $$
-Median=L+\left(\frac\{N/2-C.F.}\{f}\right)\times h
+Median=L+\left(\frac{N/2-C.F.}{f}\right)\times h
 $$
 
 Substitute:
 
 $$
-28.5=20+\left(\frac\{30-(5+x)}\{20}\right)\times10
+28.5=20+\left(\frac{30-(5+x)}{20}\right)\times10
 $$
 
 $$
-8.5=\frac\{25-x}\{2}
+8.5=\frac{25-x}{2}
 $$
 
 $$
@@ -228,10 +227,10 @@ $$
 $$
 
 $$
-\boxed\{x=8}
+\boxed{x=8}
 $$
 
-### Step 2: Find y
+#### Step 2: Find y
 
 Total frequency is 60.
 
@@ -239,7 +238,7 @@ $$
 5+x+20+15+y+5=60
 $$
 
-Put (x=8):
+Put $x=8$:
 
 $$
 5+8+20+15+y+5=60
@@ -250,16 +249,16 @@ $$
 $$
 
 $$
-\boxed\{y=7}
+\boxed{y=7}
 $$
 
-### Answer
+#### Answer
 
 $$
-\boxed\{x=8,\quad y=7}
+\boxed{x=8,\quad y=7}
 $$
 
-\</details>
+</details>
 
 ---
 
@@ -279,8 +278,8 @@ A life insurance agent found the following data for distribution of ages of 100 
 | Below 55 | 98                       |
 | Below 60 | 100                      |
 
-\<details>
-\<summary>Show Solution\</summary>
+<details>
+<summary>Show Solution</summary>
 
 The given table is a **less-than cumulative frequency distribution**.
 
@@ -305,7 +304,7 @@ N=100
 $$
 
 $$
-\frac\{N}\{2}=50
+\frac{N}{2}=50
 $$
 
 The first C.F. greater than 50 is **78**.
@@ -324,22 +323,22 @@ h = 5
 Formula:
 
 $$
-Median=L+\left(\frac\{N/2-C.F.}\{f}\right)\times h
+Median=L+\left(\frac{N/2-C.F.}{f}\right)\times h
 $$
 
 $$
-Median=35+\left(\frac\{50-45}\{33}\right)\times5
+Median=35+\left(\frac{50-45}{33}\right)\times5
 $$
 
 $$
-Median=35+\frac\{25}\{33}
+Median=35+\frac{25}{33}
 $$
 
 $$
-\boxed\{Median\approx35.76\text\{ years}}
+\boxed{Median\approx35.76\text{ years}}
 $$
 
-\</details>
+</details>
 
 ---
 
@@ -361,10 +360,10 @@ The lengths of 40 leaves of a plant are measured correct to the nearest millimet
 The data must be converted to continuous classes because the median formula assumes continuous classes.
 :::
 
-\<details>
-\<summary>Show Solution\</summary>
+<details>
+<summary>Show Solution</summary>
 
-### Step 1: Convert into continuous classes
+#### Step 1: Convert into continuous classes
 
 Since the measurements are given to the nearest millimetre:
 
@@ -378,7 +377,7 @@ Since the measurements are given to the nearest millimetre:
 172–180 → 171.5–180.5
 ```
 
-### Step 2: Find the Median Class
+#### Step 2: Find the Median Class
 
 Total:
 
@@ -387,7 +386,7 @@ N=40
 $$
 
 $$
-\frac\{N}\{2}=20
+\frac{N}{2}=20
 $$
 
 Cumulative frequencies:
@@ -413,14 +412,14 @@ f = 12
 h = 9
 ```
 
-### Step 3: Apply the Formula
+#### Step 3: Apply the Formula
 
 $$
-Median=L+\left(\frac\{N/2-C.F.}\{f}\right)\times h
+Median=L+\left(\frac{N/2-C.F.}{f}\right)\times h
 $$
 
 $$
-Median=144.5+\left(\frac\{20-17}\{12}\right)\times9
+Median=144.5+\left(\frac{20-17}{12}\right)\times9
 $$
 
 $$
@@ -428,10 +427,10 @@ Median=144.5+2.25
 $$
 
 $$
-\boxed\{Median=146.75\text\{ mm}}
+\boxed{Median=146.75\text{ mm}}
 $$
 
-\</details>
+</details>
 
 ---
 
@@ -449,10 +448,10 @@ The following table gives the distribution of the life time of **400 neon lamps*
 | 4000–4500            | 62              |
 | 4500–5000            | 48              |
 
-\<details>
-\<summary>Show Solution\</summary>
+<details>
+<summary>Show Solution</summary>
 
-### Step 1: Find C.F.
+#### Step 1: Find C.F.
 
 | Life time     | f      | C.F.    |
 | ------------- | ------ | ------- |
@@ -471,7 +470,7 @@ N=400
 $$
 
 $$
-\frac\{N}\{2}=200
+\frac{N}{2}=200
 $$
 
 The first C.F. greater than 200 is **216**.
@@ -487,18 +486,18 @@ f = 86
 h = 500
 ```
 
-### Step 2: Apply the Formula
+#### Step 2: Apply the Formula
 
 $$
-Median=L+\left(\frac\{N/2-C.F.}\{f}\right)\times h
-$$
-
-$$
-Median=3000+\left(\frac\{200-130}\{86}\right)\times500
+Median=L+\left(\frac{N/2-C.F.}{f}\right)\times h
 $$
 
 $$
-Median=3000+\frac\{70}\{86}\times500
+Median=3000+\left(\frac{200-130}{86}\right)\times500
+$$
+
+$$
+Median=3000+\frac{70}{86}\times500
 $$
 
 $$
@@ -506,10 +505,10 @@ Median\approx3000+406.98
 $$
 
 $$
-\boxed\{Median\approx3406.98\text\{ hours}}
+\boxed{Median\approx3406.98\text{ hours}}
 $$
 
-\</details>
+</details>
 
 ---
 
@@ -527,10 +526,10 @@ Determine:
 2. The mean number of letters in the surnames.
 3. The modal size of the surnames.
 
-\<details>
-\<summary>Show Solution\</summary>
+<details>
+<summary>Show Solution</summary>
 
-### Part A: Median
+#### Part A: Median
 
 Total:
 
@@ -539,7 +538,7 @@ N=100
 $$
 
 $$
-\frac\{N}\{2}=50
+\frac{N}{2}=50
 $$
 
 Cumulative frequency:
@@ -565,7 +564,7 @@ h = 3
 ```
 
 $$
-Median=7+\left(\frac\{50-36}\{40}\right)\times3
+Median=7+\left(\frac{50-36}{40}\right)\times3
 $$
 
 $$
@@ -573,10 +572,10 @@ Median=7+1.05
 $$
 
 $$
-\boxed\{Median=8.05}
+\boxed{Median=8.05}
 $$
 
-### Part B: Mean
+#### Part B: Mean
 
 Class marks:
 
@@ -595,18 +594,18 @@ Class marks:
 | **Total** | **100** |      | **832** |
 
 $$
-Mean=\frac\{\sum fx}\{\sum f}
+Mean=\frac{\sum fx}{\sum f}
 $$
 
 $$
-Mean=\frac\{832}\{100}
+Mean=\frac{832}{100}
 $$
 
 $$
-\boxed\{Mean=8.32}
+\boxed{Mean=8.32}
 $$
 
-### Part C: Mode
+#### Part C: Mode
 
 The highest frequency is **40**, so the modal class is **7–10**.
 
@@ -623,22 +622,22 @@ h = 3
 Formula:
 
 $$
-Mode=L+\left(\frac\{f\_1-f\_0}\{2f\_1-f\_0-f\_2}\right)\times h
+Mode=L+\left(\frac{f_1-f_0}{2f_1-f_0-f_2}\right)\times h
 $$
 
 $$
-Mode=7+\left(\frac\{40-30}\{80-30-16}\right)\times3
+Mode=7+\left(\frac{40-30}{80-30-16}\right)\times3
 $$
 
 $$
-Mode=7+\frac\{10}\{34}\times3
+Mode=7+\frac{10}{34}\times3
 $$
 
 $$
-\boxed\{Mode\approx7.88}
+\boxed{Mode\approx7.88}
 $$
 
-### Final Answers
+#### Final Answers
 
 ```text
 Median = 8.05 letters
@@ -646,7 +645,7 @@ Mean   = 8.32 letters
 Mode   ≈ 7.88 letters
 ```
 
-\</details>
+</details>
 
 ---
 
@@ -664,10 +663,10 @@ The distribution below gives the weights of 30 students of a class. Find the **m
 | 65–70          | 3                  |
 | 70–75          | 2                  |
 
-\<details>
-\<summary>Show Solution\</summary>
+<details>
+<summary>Show Solution</summary>
 
-### Step 1: Find C.F.
+#### Step 1: Find C.F.
 
 | Weight    | f     | C.F.   |
 | --------- | ----- | ------ |
@@ -686,7 +685,7 @@ N=30
 $$
 
 $$
-\frac\{N}\{2}=15
+\frac{N}{2}=15
 $$
 
 The first C.F. greater than 15 is **19**.
@@ -702,35 +701,35 @@ f = 6
 h = 5
 ```
 
-### Step 2: Apply the Formula
+#### Step 2: Apply the Formula
 
 $$
-Median=L+\left(\frac\{N/2-C.F.}\{f}\right)\times h
-$$
-
-$$
-Median=55+\left(\frac\{15-13}\{6}\right)\times5
+Median=L+\left(\frac{N/2-C.F.}{f}\right)\times h
 $$
 
 $$
-Median=55+\frac\{10}\{6}
+Median=55+\left(\frac{15-13}{6}\right)\times5
+$$
+
+$$
+Median=55+\frac{10}{6}
 $$
 
 $$
 Median=56.67
 $$
 
-### Answer
+#### Answer
 
 $$
-\boxed\{Median\approx56.67\text\{ kg}}
+\boxed{Median\approx56.67\text{ kg}}
 $$
 
-\</details>
+</details>
 
 ---
 
-# Quick Answer Key
+## Quick Answer Key
 
 | Question | Answer                                                 |
 | -------- | ------------------------------------------------------ |

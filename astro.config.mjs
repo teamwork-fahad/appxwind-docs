@@ -117,6 +117,7 @@ export default defineConfig({
 								{ slug: 'maths/unit-3/median' },
 								{ slug: 'maths/unit-3/quartiles-deciles-percentiles' },
 								{ slug: 'maths/unit-3/dispersion' },
+								{ slug: 'maths/unit-3/exercise-mean-median-and-mode', label: 'Exercise — Mean, Median and Mode' },
 							],
 						},
 						{

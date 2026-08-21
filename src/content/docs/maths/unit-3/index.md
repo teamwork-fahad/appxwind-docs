@@ -13,5 +13,6 @@ Statistics deals with collecting, organizing, presenting, analyzing, and interpr
 - [3.3 Measures of Central Tendency](./central-tendency/)
 - [3.4 Quartiles, Deciles, and Percentiles](./quartiles-deciles-percentiles/)
 - [3.5 Measures of Dispersion](./dispersion/)
+- [Exercise — Mean, Median and Mode](./exercise-mean-median-and-mode/)
 
 Use these pages to study each topic separately, with definitions, formulas, and examples added as the syllabus grows.
