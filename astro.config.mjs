@@ -1,14 +1,14 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import keystatic from '@keystatic/astro';
-import node from '@astrojs/node';
+import netlify from '@astrojs/netlify';
 import react from '@astrojs/react';
 import rehypeKatex from 'rehype-katex';
 import remarkMath from 'remark-math';
 
 export default defineConfig({
 	output: 'server',
-	adapter: node({ mode: 'standalone' }),
+	adapter: netlify(),
 	markdown: {
 		remarkPlugins: [remarkMath],
 		rehypePlugins: [rehypeKatex],
