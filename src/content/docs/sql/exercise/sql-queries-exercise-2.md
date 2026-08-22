@@ -1398,3 +1398,323 @@ SELECT * FROM PRODUCT P
 WHERE (SELECT COUNT(*) FROM ITEM I WHERE I.PRODID = P.PRODID) > 6;
 ```
 </details>
+
+---
+
+## Assignment: 25 SQL Query Solutions
+
+The following solutions answer the attached assignment using the `DEPT`, `EMP`, `CUSTOMER`, `ORD`, `PRODUCT`, and `ITEM` tables defined above. `COALESCE(COMM, 0)` treats a missing commission as zero while calculating total earnings.
+
+### 1. Clerks and managers in departments 10 and 20
+
+```sql
+SELECT *
+FROM EMP
+WHERE JOB IN ('CLERK', 'MANAGER')
+  AND DEPTNO IN (10, 20);
+```
+
+### 2. Employees with `A` in the second position
+
+```sql
+SELECT *
+FROM EMP
+WHERE ENAME LIKE '_A%';
+```
+
+`_` represents exactly one character, so the `A` is at position 2.
+
+### 3. Customers whose names contain two or more words
+
+```sql
+SELECT *
+FROM CUSTOMER
+WHERE NAME LIKE '% %';
+```
+
+The space shows that the name contains at least two words.
+
+### 4. Orders without a commission plan
+
+```sql
+SELECT *
+FROM ORD
+WHERE COMMPLAN IS NULL;
+```
+
+### 5. Employees ordered by department and total earnings
+
+```sql
+SELECT E.*,
+       E.SAL + COALESCE(E.COMM, 0) AS TOTAL_EARNINGS
+FROM EMP E
+ORDER BY E.DEPTNO ASC, TOTAL_EARNINGS DESC;
+```
+
+### 6. Number of employees in each job of each department
+
+```sql
+SELECT DEPTNO, JOB, COUNT(*) AS EMPLOYEE_COUNT
+FROM EMP
+GROUP BY DEPTNO, JOB
+ORDER BY DEPTNO, JOB;
+```
+
+### 7. Number of clerks who joined in each year
+
+```sql
+SELECT STRFTIME('%Y', HIREDATE) AS JOIN_YEAR,
+       COUNT(*) AS CLERK_COUNT
+FROM EMP
+WHERE JOB = 'CLERK'
+GROUP BY STRFTIME('%Y', HIREDATE)
+ORDER BY JOIN_YEAR;
+```
+
+### 8. Employees and their number of subordinates
+
+```sql
+SELECT MGR AS EMPNO, COUNT(*) AS SUBORDINATE_COUNT
+FROM EMP
+WHERE MGR IS NOT NULL
+GROUP BY MGR
+HAVING COUNT(*) >= 1
+ORDER BY EMPNO;
+```
+
+### 9. Department-wise salary total of clerks
+
+```sql
+SELECT DEPTNO, SUM(SAL) AS TOTAL_CLERK_SALARY
+FROM EMP
+WHERE JOB = 'CLERK'
+GROUP BY DEPTNO
+ORDER BY TOTAL_CLERK_SALARY DESC;
+```
+
+### 10. Sales employees who have at least one subordinate
+
+```sql
+SELECT E.*
+FROM EMP E
+JOIN DEPT D ON D.DEPTNO = E.DEPTNO
+WHERE D.DNAME = 'SALES'
+  AND EXISTS (
+      SELECT 1
+      FROM EMP S
+      WHERE S.MGR = E.EMPNO
+  );
+```
+
+### 11. Employees through whom at least one order was placed
+
+```sql
+SELECT E.*
+FROM EMP E
+WHERE EXISTS (
+    SELECT 1
+    FROM CUSTOMER C
+    JOIN ORD O ON O.CUSTID = C.CUSTID
+    WHERE C.REPID = E.EMPNO
+);
+```
+
+The `EXISTS` condition avoids returning duplicate employee rows when a representative has several customers or orders.
+
+### 12. Sales employees earning more than at least one accounting employee
+
+```sql
+SELECT E.*
+FROM EMP E
+JOIN DEPT D ON D.DEPTNO = E.DEPTNO
+WHERE D.DNAME = 'SALES'
+  AND E.SAL > (
+      SELECT MIN(A.SAL)
+      FROM EMP A
+      JOIN DEPT AD ON AD.DEPTNO = A.DEPTNO
+      WHERE AD.DNAME = 'ACCOUNTING'
+  );
+```
+
+`SAL > MIN(accounting salaries)` is equivalent to being greater than **any** accounting employee's salary.
+
+### 13. Sales employees earning more than every accounting employee
+
+```sql
+SELECT E.*
+FROM EMP E
+JOIN DEPT D ON D.DEPTNO = E.DEPTNO
+WHERE D.DNAME = 'SALES'
+  AND E.SAL > (
+      SELECT MAX(A.SAL)
+      FROM EMP A
+      JOIN DEPT AD ON AD.DEPTNO = A.DEPTNO
+      WHERE AD.DNAME = 'ACCOUNTING'
+  );
+```
+
+`SAL > MAX(accounting salaries)` is equivalent to being greater than **all** accounting employees' salaries.
+
+### 14. Products with the highest total order amount
+
+```sql
+WITH PRODUCT_TOTALS AS (
+    SELECT PRODID, SUM(ITEMTOT) AS TOTAL_ORDER_AMOUNT
+    FROM ITEM
+    GROUP BY PRODID
+)
+SELECT P.*, T.TOTAL_ORDER_AMOUNT
+FROM PRODUCT P
+JOIN PRODUCT_TOTALS T ON T.PRODID = P.PRODID
+WHERE T.TOTAL_ORDER_AMOUNT = (
+    SELECT MAX(TOTAL_ORDER_AMOUNT)
+    FROM PRODUCT_TOTALS
+);
+```
+
+### 15. Customers who placed the highest-total-order products
+
+```sql
+WITH PRODUCT_TOTALS AS (
+    SELECT PRODID, SUM(ITEMTOT) AS TOTAL_ORDER_AMOUNT
+    FROM ITEM
+    GROUP BY PRODID
+), HIGHEST_PRODUCTS AS (
+    SELECT PRODID
+    FROM PRODUCT_TOTALS
+    WHERE TOTAL_ORDER_AMOUNT = (SELECT MAX(TOTAL_ORDER_AMOUNT) FROM PRODUCT_TOTALS)
+)
+SELECT DISTINCT C.*
+FROM CUSTOMER C
+JOIN ORD O ON O.CUSTID = C.CUSTID
+JOIN ITEM I ON I.ORDID = O.ORDID
+JOIN HIGHEST_PRODUCTS H ON H.PRODID = I.PRODID;
+```
+
+### 16. Department with the lowest average salary
+
+```sql
+WITH DEPARTMENT_AVERAGES AS (
+    SELECT DEPTNO, AVG(SAL) AS AVERAGE_SALARY
+    FROM EMP
+    GROUP BY DEPTNO
+)
+SELECT D.*, A.AVERAGE_SALARY
+FROM DEPT D
+JOIN DEPARTMENT_AVERAGES A ON A.DEPTNO = D.DEPTNO
+WHERE A.AVERAGE_SALARY = (
+    SELECT MIN(AVERAGE_SALARY)
+    FROM DEPARTMENT_AVERAGES
+);
+```
+
+### 17. Orders containing more than three item rows
+
+```sql
+SELECT O.*, COUNT(I.ITEMID) AS ITEM_COUNT
+FROM ORD O
+JOIN ITEM I ON I.ORDID = O.ORDID
+GROUP BY O.ORDID, O.ORDERDATE, O.COMMPLAN, O.CUSTID, O.SHIPDATE, O.TOTAL
+HAVING COUNT(I.ITEMID) > 3;
+```
+
+This counts item rows. To interpret the question as more than three individual units, replace `COUNT(I.ITEMID)` with `SUM(I.QTY)` in the `SELECT` and `HAVING` clauses.
+
+### 18. Departments with the maximum number of clerks
+
+```sql
+WITH CLERK_COUNTS AS (
+    SELECT DEPTNO, COUNT(*) AS CLERK_COUNT
+    FROM EMP
+    WHERE JOB = 'CLERK'
+    GROUP BY DEPTNO
+)
+SELECT D.*, C.CLERK_COUNT
+FROM DEPT D
+JOIN CLERK_COUNTS C ON C.DEPTNO = D.DEPTNO
+WHERE C.CLERK_COUNT = (SELECT MAX(CLERK_COUNT) FROM CLERK_COUNTS);
+```
+
+### 19. Products in the first order
+
+```sql
+SELECT DISTINCT P.*
+FROM PRODUCT P
+JOIN ITEM I ON I.PRODID = P.PRODID
+WHERE I.ORDID = (
+    SELECT ORDID
+    FROM ORD
+    ORDER BY ORDERDATE ASC, ORDID ASC
+    LIMIT 1
+);
+```
+
+The order ID is used as a tie-breaker if two orders have the same date.
+
+### 20. Products ordered most by quantity
+
+```sql
+WITH PRODUCT_QUANTITIES AS (
+    SELECT PRODID, SUM(QTY) AS TOTAL_QUANTITY
+    FROM ITEM
+    GROUP BY PRODID
+)
+SELECT P.*, Q.TOTAL_QUANTITY
+FROM PRODUCT P
+JOIN PRODUCT_QUANTITIES Q ON Q.PRODID = P.PRODID
+WHERE Q.TOTAL_QUANTITY = (
+    SELECT MAX(TOTAL_QUANTITY)
+    FROM PRODUCT_QUANTITIES
+);
+```
+
+### 21. Employees with at least three subordinates
+
+```sql
+SELECT M.EMPNO, M.ENAME, M.JOB
+FROM EMP M
+WHERE (
+    SELECT COUNT(*)
+    FROM EMP S
+    WHERE S.MGR = M.EMPNO
+) >= 3;
+```
+
+### 22. Customers and their representatives
+
+```sql
+SELECT C.CUSTID, C.NAME, C.CITY,
+       E.EMPNO, E.ENAME, E.JOB
+FROM CUSTOMER C
+JOIN EMP E ON E.EMPNO = C.REPID;
+```
+
+### 23. Employees earning more than their department average
+
+```sql
+SELECT E.*
+FROM EMP E
+WHERE E.SAL > (
+    SELECT AVG(D.SAL)
+    FROM EMP D
+    WHERE D.DEPTNO = E.DEPTNO
+);
+```
+
+### 24. Employees earning more than their manager
+
+```sql
+SELECT E.*
+FROM EMP E
+JOIN EMP M ON M.EMPNO = E.MGR
+WHERE E.SAL > M.SAL;
+```
+
+### 25. Employees who manage others but are not designated managers
+
+```sql
+SELECT DISTINCT M.*
+FROM EMP M
+JOIN EMP S ON S.MGR = M.EMPNO
+WHERE M.JOB <> 'MANAGER';
+```
