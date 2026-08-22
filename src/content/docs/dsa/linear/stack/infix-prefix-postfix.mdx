@@ -5,6 +5,8 @@ sidebar:
   order: 3
 ---
 
+import GitHubCode from '../../../../../components/GitHubCode.astro';
+
 # Infix, Prefix and Postfix
 
 Expression notations differ in operator placement relative to operands:
@@ -16,3 +18,9 @@ Expression notations differ in operator placement relative to operands:
 ## Precedence and Associativity
 
 Stack data structures help parse operators according to precedence (e.g. `*` before `+`) and associativity (left-to-right or right-to-left).
+
+## C Implementation — Infix to Postfix
+
+Below is the complete C program to convert an infix expression to a postfix expression using a stack:
+
+<GitHubCode file="02-Stack/02-Infix-to-Postfix.c" />
