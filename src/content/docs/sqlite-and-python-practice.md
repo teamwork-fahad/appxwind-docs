@@ -14,11 +14,11 @@ The SQL uses common MySQL/PostgreSQL-compatible syntax. Run each block separatel
 
 This course moves from SQLite fundamentals to Python database programming, file handling, Pandas/NumPy data frames, and two-dimensional data visualization.
 
-* [Introduction to SQLite](./unit-1/)
-* [Database Backup and CSV Handling](./unit-2/)
-* [Python Interaction with SQLite](./unit-3/)
-* [Python Interaction with Text and CSV](./unit-4/)
-* [Data Visualization Using DataFrames](./unit-5/)
+* [Introduction to SQLite](/sql/)
+* [Database Backup and CSV Handling](/sql/unit-2/)
+* [Python Interaction with SQLite](/sql/unit-3/)
+* [Python Interaction with Text and CSV](/sql/unit-4/)
+* [Data Visualization Using DataFrames](/sql/unit-5/)
 
 ## 1. Departments
 

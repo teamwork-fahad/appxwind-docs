@@ -70,6 +70,6 @@ public:
 
 ## C++ syllabus
 
-- [Classes, Objects, Strings, and Fundamentals](./fundamentals/)
-- [Encapsulation, Access Control, Inheritance](./encapsulation-inheritance/)
-- [Polymorphism](./polymorphism/)
+- [Classes, Objects, Strings, and Fundamentals](/oop/cpp/fundamentals/)
+- [Encapsulation, Access Control, Inheritance](/oop/cpp/encapsulation-inheritance/)
+- [Polymorphism](/oop/cpp/polymorphism/)

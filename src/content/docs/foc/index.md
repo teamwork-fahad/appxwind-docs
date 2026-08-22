@@ -16,4 +16,4 @@ Welcome to the Fundamentals of Computer course. This section covers essential co
 * **Unit 4**: Introduction to Open Source OS: Linux
 * **Unit 5**: Open Office Suite
 
-Start with [Unit 1](./unit-1/) to begin your journey into computer fundamentals.
+Start with [Unit 1](/foc/unit-1/) to begin your journey into computer fundamentals.

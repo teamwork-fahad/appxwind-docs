@@ -7,10 +7,10 @@ Data Structures and Algorithms (DSA) teaches how to organize data and solve prob
 
 ## Course syllabus
 
-- [Introduction and Algorithm Analysis](./introduction/)
-- [Linear Data Structures](./linear/)
-- [Non-Linear Data Structures](./non-linear/)
-- [Searching Techniques](./searching/)
-- [Sorting Techniques](./sorting/)
+- [Introduction and Algorithm Analysis](/dsa/introduction/)
+- [Linear Data Structures](/dsa/linear/)
+- [Non-Linear Data Structures](/dsa/non-linear/)
+- [Searching Techniques](/dsa/searching/)
+- [Sorting Techniques](/dsa/sorting/)
 
 The examples in this course can be implemented in C++, Java, Python, or another programming language. The concepts and complexity analysis remain the same.

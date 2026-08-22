@@ -33,9 +33,9 @@ A constructor initializes an object. A destructor or cleanup method releases res
 
 ## Same idea, different syntax
 
-- [OOP with C++](./cpp/)
-- [OOP with Java](./java/)
-- [OOP with Python](./python/)
-- [OOP with PHP](./php/)
+- [OOP with C++](/oop/cpp/)
+- [OOP with Java](/oop/java/)
+- [OOP with Python](/oop/python/)
+- [OOP with PHP](/oop/php/)
 
 The detailed C++ syllabus is kept under the C++ section because its topics include C++-specific features such as header files, `string.h`, friend functions, virtual functions, and pure virtual functions.
