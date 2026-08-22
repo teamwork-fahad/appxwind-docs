@@ -1,5 +1,5 @@
 ---
-title: 'Introduction and Algorithm Analysis'
+title: 'Introduction Data structures and algorithm(DSA)'
 description: 'Data structure classification, operations, complexity, and asymptotic notation.'
 ---
 

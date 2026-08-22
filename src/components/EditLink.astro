@@ -1,16 +1,26 @@
 ---
 import type { Props } from '@astrojs/starlight/props';
 
-const { entry } = Astro.props;
+const props = Astro.props;
+
+let entryId = props.entry?.id || props.id || '';
 
 let editUrl = '';
-if (entry && entry.id) {
-  const isMdx = entry.id.endsWith('.mdx');
+
+if (entryId) {
+  const isMdx = entryId.endsWith('.mdx');
   const extension = isMdx ? '.mdx' : '.md';
-  const rawSlug = entry.id.slice(0, -extension.length);
+  const rawSlug = (entryId.endsWith('.md') || entryId.endsWith('.mdx'))
+    ? entryId.slice(0, -extension.length) 
+    : entryId;
   const encodedSlug = encodeURIComponent(rawSlug);
   const collectionName = isMdx ? 'tutorials' : 'markdownTutorials';
   editUrl = `/keystatic/branch/master/collection/${collectionName}/item/${encodedSlug}`;
+} else {
+  let pathname = Astro.url.pathname.replace(/^\/|\/$/g, '');
+  if (!pathname) pathname = 'index';
+  const encodedSlug = encodeURIComponent(pathname);
+  editUrl = `/keystatic/branch/master/collection/markdownTutorials/item/${encodedSlug}`;
 }
 
 const isDev = import.meta.env.DEV;
@@ -19,7 +29,6 @@ const hasKeystaticCookie =
   Astro.cookies.has('keystatic-session') ||
   Astro.cookies.has('keystatic-state');
 
-// Show edit button in dev mode, or in production if user is logged into Keystatic
 const showEditButton = isDev || hasKeystaticCookie;
 ---
 

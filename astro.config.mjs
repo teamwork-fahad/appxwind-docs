@@ -18,6 +18,9 @@ export default defineConfig({
 		keystatic(),
 		starlight({
 			title: 'AppXwinD Docs',
+			editLink: {
+				baseUrl: 'https://github.com/teamwork-fahad/appxwind-docs/edit/master/src/content/docs/',
+			},
 			customCss: ['katex/dist/katex.min.css', './src/styles/new-words.css'],
 			components: {
 				EditLink: './src/components/EditLink.astro',
