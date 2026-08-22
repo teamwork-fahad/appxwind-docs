@@ -1,0 +1,62 @@
+---
+import type { Props } from '@astrojs/starlight/props';
+
+const { entry } = Astro.props;
+
+let editUrl = '';
+if (entry && entry.id) {
+  const isMdx = entry.id.endsWith('.mdx');
+  const extension = isMdx ? '.mdx' : '.md';
+  const rawSlug = entry.id.slice(0, -extension.length);
+  const encodedSlug = encodeURIComponent(rawSlug);
+  const collectionName = isMdx ? 'tutorials' : 'markdownTutorials';
+  editUrl = `/keystatic/branch/master/collection/${collectionName}/item/${encodedSlug}`;
+}
+
+const isDev = import.meta.env.DEV;
+const hasKeystaticCookie = 
+  Astro.cookies.has('keystatic-gh-access-token') || 
+  Astro.cookies.has('keystatic-session') ||
+  Astro.cookies.has('keystatic-state');
+
+// Show edit button in dev mode, or in production if user is logged into Keystatic
+const showEditButton = isDev || hasKeystaticCookie;
+---
+
+{editUrl && showEditButton && (
+  <div class="keystatic-edit-wrapper sl-flex">
+    <a href={editUrl} class="keystatic-edit-btn sl-flex" target="_blank" rel="noopener noreferrer">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 20h9"></path>
+        <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+      </svg>
+      <span>Edit this page in Keystatic</span>
+    </a>
+  </div>
+)}
+
+<style>
+  .keystatic-edit-wrapper {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .keystatic-edit-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: 0.375rem;
+    background-color: var(--sl-color-bg-inline-code, rgba(59, 130, 246, 0.1));
+    color: var(--sl-color-text-accent, #3b82f6);
+    border: 1px solid var(--sl-color-text-accent, rgba(59, 130, 246, 0.3));
+    font-size: var(--sl-text-sm, 0.875rem);
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .keystatic-edit-btn:hover {
+    background-color: var(--sl-color-text-accent, #3b82f6);
+    color: #ffffff;
+    border-color: var(--sl-color-text-accent, #3b82f6);
+  }
+</style>

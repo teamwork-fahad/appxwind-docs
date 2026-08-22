@@ -19,6 +19,9 @@ export default defineConfig({
 		starlight({
 			title: 'AppXwinD Docs',
 			customCss: ['katex/dist/katex.min.css', './src/styles/new-words.css'],
+			components: {
+				EditLink: './src/components/EditLink.astro',
+			},
 
 			sidebar: [
 				{
