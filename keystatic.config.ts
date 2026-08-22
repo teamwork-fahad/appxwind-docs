@@ -41,6 +41,12 @@ export default config({
           label: 'Description',
           multiline: true,
         }),
+        sidebar: fields.object({
+          label: fields.text({ label: 'Sidebar Label' }),
+          order: fields.integer({ label: 'Sidebar Order' }),
+          hidden: fields.checkbox({ label: 'Hide in Sidebar' }),
+          badge: fields.text({ label: 'Sidebar Badge' }),
+        }),
         content: fields.mdx({
           label: 'Tutorial content',
           extension: 'mdx',
@@ -67,6 +73,12 @@ export default config({
         description: fields.text({
           label: 'Description',
           multiline: true,
+        }),
+        sidebar: fields.object({
+          label: fields.text({ label: 'Sidebar Label' }),
+          order: fields.integer({ label: 'Sidebar Order' }),
+          hidden: fields.checkbox({ label: 'Hide in Sidebar' }),
+          badge: fields.text({ label: 'Sidebar Badge' }),
         }),
         content: fields.mdx({
           label: 'Tutorial content',
