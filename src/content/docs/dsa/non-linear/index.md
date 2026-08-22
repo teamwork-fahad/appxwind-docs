@@ -1,6 +1,8 @@
 ---
 title: 'Non-Linear Data Structures'
-description: 'Trees, binary trees, binary search trees, AVL trees, splay trees, and applications.'
+description: 'Trees and graphs.'
+sidebar:
+  order: 4
 ---
 
 ## Trees

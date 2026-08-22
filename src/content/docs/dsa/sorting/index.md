@@ -1,6 +1,8 @@
 ---
 title: 'Sorting Techniques'
-description: 'Bubble, selection, insertion, shell, merge, quick, radix, and heap sort.'
+description: 'Bubble sort, selection sort, insertion sort, quicksort, mergesort, heap sort, and radix sort.'
+sidebar:
+  order: 6
 ---
 
 Sorting arranges data according to an order, usually ascending or descending.

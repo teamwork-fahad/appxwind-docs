@@ -1,6 +1,8 @@
 ---
 title: 'Data Structures and Algorithms'
 description: 'Learn data structures, algorithm analysis, searching, and sorting techniques.'
+sidebar:
+  order: 1
 ---
 
 Data Structures and Algorithms (DSA) teaches how to organize data and solve problems efficiently.

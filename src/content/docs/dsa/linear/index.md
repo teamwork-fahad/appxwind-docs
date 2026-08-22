@@ -1,6 +1,8 @@
 ---
 title: 'Linear Data Structures'
 description: 'Arrays, stacks, queues, linked lists, recursion, and polynomial manipulation.'
+sidebar:
+  order: 3
 ---
 
 ## Array

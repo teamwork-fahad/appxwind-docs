@@ -1,13 +1,16 @@
 import { collection, config, fields } from '@keystatic/core';
 
 export default config({
-  storage: {
-    kind: 'github',
-    repo: {
-      owner: 'teamwork-fahad',
-      name: 'appxwind-docs',
-    },
-  },
+  storage:
+    process.env.NODE_ENV === 'development'
+      ? { kind: 'local' }
+      : {
+          kind: 'github',
+          repo: {
+            owner: 'teamwork-fahad',
+            name: 'appxwind-docs',
+          },
+        },
   ui: {
     brand: {
       name: 'AppXwinD Docs',

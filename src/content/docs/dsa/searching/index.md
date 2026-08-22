@@ -1,6 +1,8 @@
 ---
 title: 'Searching Techniques'
 description: 'Linear search, binary search, hashing, collisions, and rehashing.'
+sidebar:
+  order: 5
 ---
 
 ## Linear search
