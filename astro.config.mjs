@@ -19,7 +19,7 @@ export default defineConfig({
 		starlight({
 			title: 'AppXwinD Docs',
 			editLink: {
-				baseUrl: 'https://github.com/teamwork-fahad/appxwind-docs/edit/master/src/content/docs/',
+				baseUrl: 'http://127.0.0.1:4321/keystatic/collection/markdownTutorials/item/',
 			},
 			customCss: ['katex/dist/katex.min.css', './src/styles/new-words.css'],
 			components: {
